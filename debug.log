@@ -1,0 +1,15 @@
+{"level":"ERROR","time":"2024-06-06T09:31:02.575Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:13306: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T09:42:16.988Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:8088: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T09:43:04.586Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T09:45:42.079Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T09:46:02.031Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:8088: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T09:49:34.885Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'mysql'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T09:50:25.263Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1698 (28000): Access denied for user 'root'@'localhost'"}
+{"level":"ERROR","time":"2024-06-06T09:54:00.577Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1698 (28000): Access denied for user 'root'@'localhost'"}
+{"level":"ERROR","time":"2024-06-06T09:55:35.110Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T09:56:57.211Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T09:57:27.556Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
+{"level":"ERROR","time":"2024-06-06T13:02:06.352Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T13:04:13.693Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T13:04:44.654Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"ERROR","time":"2024-06-06T13:09:30.278Z","caller":"mysql/mysql.go:21","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
