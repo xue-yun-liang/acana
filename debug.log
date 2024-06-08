@@ -1,15 +1,46 @@
-{"level":"ERROR","time":"2024-06-06T09:31:02.575Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:13306: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T09:42:16.988Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:8088: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T09:43:04.586Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T09:45:42.079Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T09:46:02.031Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 127.0.0.1:8088: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T09:49:34.885Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'mysql'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T09:50:25.263Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1698 (28000): Access denied for user 'root'@'localhost'"}
-{"level":"ERROR","time":"2024-06-06T09:54:00.577Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1698 (28000): Access denied for user 'root'@'localhost'"}
-{"level":"ERROR","time":"2024-06-06T09:55:35.110Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T09:56:57.211Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T09:57:27.556Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"dial tcp 10.68.55.82:8088: connect: connection refused"}
-{"level":"ERROR","time":"2024-06-06T13:02:06.352Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T13:04:13.693Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T13:04:44.654Z","caller":"mysql/mysql.go:19","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
-{"level":"ERROR","time":"2024-06-06T13:09:30.278Z","caller":"mysql/mysql.go:21","msg":"connect mysql failed:","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)"}
+{"level":"DEBUG","time":"2024-06-07T09:10:11.153Z","caller":"mybell/main.go:26","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-07T09:33:52.029Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:08:24.564Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:10:25.291Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:12:37.480Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:13:28.965Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:20:10.218Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:22:27.325Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:23:31.311Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:23:59.213Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:27:21.946Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:28:14.599Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"DEBUG","time":"2024-06-08T12:29:59.506Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"INFO","time":"2024-06-08T12:30:15.313Z","caller":"logger/logger.go:64","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"10.31.234.211","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0","errors":"","cost":0.000021302}
+{"level":"INFO","time":"2024-06-08T12:30:16.640Z","caller":"logger/logger.go:64","msg":"/favicon.ico","status":200,"method":"GET","path":"/favicon.ico","query":"","ip":"10.31.234.211","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0","errors":"","cost":0.000093174}
+{"level":"INFO","time":"2024-06-08T12:39:24.373Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T12:39:24.373Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"INFO","time":"2024-06-08T12:39:43.331Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T12:39:43.331Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"INFO","time":"2024-06-08T13:02:50.485Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T13:02:50.485Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"INFO","time":"2024-06-08T13:05:50.877Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"GET","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000066908}
+{"level":"INFO","time":"2024-06-08T13:06:21.751Z","caller":"logger/logger.go:76","msg":"/signup","status":200,"method":"GET","path":"/signup","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000047031}
+{"level":"INFO","time":"2024-06-08T13:08:00.464Z","caller":"logger/logger.go:76","msg":"/signup","status":200,"method":"GET","path":"/signup","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000028898}
+{"level":"INFO","time":"2024-06-08T13:09:13.890Z","caller":"logger/logger.go:76","msg":"/signup","status":200,"method":"GET","path":"/signup","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000041727}
+{"level":"INFO","time":"2024-06-08T13:09:21.569Z","caller":"logger/logger.go:76","msg":"/signup","status":200,"method":"GET","path":"/signup","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000027811}
+{"level":"INFO","time":"2024-06-08T13:09:50.141Z","caller":"logger/logger.go:76","msg":"/ping","status":200,"method":"GET","path":"/ping","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.000063619}
+{"level":"INFO","time":"2024-06-08T13:10:38.075Z","caller":"logger/logger.go:76","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.009806377}
+{"level":"INFO","time":"2024-06-08T13:10:52.197Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.002491251}
+{"level":"ERROR","time":"2024-06-08T13:12:06.543Z","caller":"controller/user.go:49","msg":"login.Login failed","error":"no exist user"}
+{"level":"INFO","time":"2024-06-08T13:12:06.543Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0028843}
+{"level":"ERROR","time":"2024-06-08T13:12:16.373Z","caller":"controller/user.go:49","msg":"login.Login failed","error":"no exist user"}
+{"level":"INFO","time":"2024-06-08T13:12:16.373Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.002988996}
+{"level":"INFO","time":"2024-06-08T13:12:27.729Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T13:12:27.729Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"ERROR","time":"2024-06-08T13:12:31.630Z","caller":"controller/user.go:49","msg":"login.Login failed","username:":"xyl","error":"no exist user"}
+{"level":"INFO","time":"2024-06-08T13:12:31.631Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.00242775}
+{"level":"INFO","time":"2024-06-08T13:12:54.128Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T13:12:54.128Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"ERROR","time":"2024-06-08T13:12:57.851Z","caller":"controller/user.go:49","msg":"login.Login failed","username:":"xyl","error":"no exist user"}
+{"level":"INFO","time":"2024-06-08T13:12:57.851Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.003303111}
+{"level":"INFO","time":"2024-06-08T13:50:33.563Z","caller":"logger/logger.go:44","msg":"init log success"}
+{"level":"DEBUG","time":"2024-06-08T13:50:33.563Z","caller":"mybell/main.go:27","msg":"logger init success"}
+{"level":"ERROR","time":"2024-06-08T13:50:41.785Z","caller":"controller/user.go:57","msg":"login.Login failed","username:":"xyl","error":"no exist user"}
+{"level":"INFO","time":"2024-06-08T13:50:41.785Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.003256015}
+{"level":"INFO","time":"2024-06-08T13:50:52.225Z","caller":"logger/logger.go:76","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"10.31.234.211","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.002411607}
