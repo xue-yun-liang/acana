@@ -16,12 +16,6 @@ func QueryUserByUsername() {
 
 }
 
-var (
-	ErrorUserExist       = errors.New("user have been exist")
-	ErrorUserNotExist    = errors.New("user is not exist")
-	ErrorInvalidPassword = errors.New("incorrect password")
-)
-
 func CheckUserIsExist(username string) (bool, error) {
 	sqlStr := `select count(user_id) from user where username = ?`
 	var cnt int
@@ -61,5 +55,12 @@ func Login(user *models.User) (err error) {
 	if password != user.Password {
 		return errors.New("Incorrect password")
 	}
+	return
+}
+
+func GetUserByID(user_id int64) (user *models.User, err error) {
+	user = new(models.User)
+	sqlStr := `select user_id, username from user where user_id=?`
+	err = db.Get(user, sqlStr, user_id)
 	return
 }

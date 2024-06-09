@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	"acana/models"
 	"acana/setting"
 	"database/sql"
 	"fmt"
@@ -9,11 +10,6 @@ import (
 	"github.com/jmoiron/sqlx"
 	"go.uber.org/zap"
 )
-
-type Community struct {
-	ID   int64  `json:"id" db:"community_id"`
-	Name string `json:"name" db:"community_name"`
-}
 
 var db *sqlx.DB
 
@@ -40,7 +36,7 @@ func Init(cfg *setting.MySQLConfig) (err error) {
 	return
 }
 
-func GetCommunityList() (communityList []*Community, err error) {
+func GetCommunityList_() (communityList []*models.Community, err error) {
 	sqlStr := "select community_id, community_name from community"
 	if err := db.Select(&communityList, sqlStr); err != nil {
 		if err == sql.ErrNoRows {
