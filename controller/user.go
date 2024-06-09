@@ -53,7 +53,8 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 	// step2: handle the busniess
-	if err := logic.Login(p); err != nil {
+	token, err := logic.Login(p)
+	if err != nil {
 		zap.L().Error("login.Login failed", zap.String("username:", p.Username), zap.Error(err))
 		if errors.Is(err, mysql.ErrorUserNotExist) {
 			ResponseError(c, CodeUserNotExist)
@@ -64,5 +65,5 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	// step3: return reponse
-	ResponseSuccess(c, nil)
+	ResponseSuccess(c, token)
 }
