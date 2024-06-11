@@ -29,7 +29,6 @@ func SignUpHandler(c *gin.Context) {
 		ResponseError(c, CodeServerBusy)
 	}
 
-	// fmt.Println(p)
 	// step2: handle business
 	if err := logic.SignUp(p); err != nil {
 		zap.L().Error("logic.SignUp failed", zap.Error(err))

@@ -2,6 +2,7 @@ package logic
 
 import (
 	"acana/dao/mysql"
+	"acana/dao/redis"
 	"acana/models"
 	"acana/pkg/snowflake"
 
@@ -12,7 +13,12 @@ func CreatePost(p *models.Post) (err error) {
 	// step1: generate post id
 	p.ID = snowflake.GenID()
 	// step2: insert data to database
-	return mysql.CreatePost(p)
+	err = mysql.CreatePost(p)
+	if err != nil {
+		return
+	}
+	err = redis.CreatePost(p.ID, p.CommunityID)
+	return
 	// step3: return
 	// have been exec by step2
 }
@@ -82,6 +88,117 @@ func GetPostList(page, size int64) (data []*models.ApiPostDetail, err error) {
 			CommunityDetail: community,
 		}
 		data = append(data, postDetail)
+	}
+	return
+}
+
+func GetOrderPostList(p *models.ParamPostList) (data []*models.ApiPostDetail, err error) {
+	ids, err := redis.GetPostIDsInOrder(p)
+	if err != nil {
+		return
+	}
+	if len(ids) == 0 {
+		zap.L().Warn("redis.GetPostIDsInorder(p) return 0 data")
+		return
+	}
+	posts, err := mysql.GetPostListByIDs(ids)
+	if err != nil {
+		return
+	}
+	// 提前查询好每篇帖子的投票数
+	voteData, err := redis.GetPostVoteData(ids)
+	if err != nil {
+		return
+	}
+
+	for idx, post := range posts {
+		// query author's data by author_id
+		user, err := mysql.GetUserByID(post.AuthorID)
+		if err != nil {
+			zap.L().Error("mysql.GetUserById(post.AuthorID) failed",
+				zap.Int64("author_id", post.AuthorID),
+				zap.Error(err))
+			continue
+		}
+		// query community's data by community_id
+		community, err := mysql.GetCommunityDetailByID(post.CommunityID)
+		if err != nil {
+			zap.L().Error("mysql.GetUserById(post.AuthorID) failed",
+				zap.Int64("community_id", post.CommunityID),
+				zap.Error(err))
+			continue
+		}
+		postDetail := &models.ApiPostDetail{
+			AuthorName:      user.Username,
+			VoteNum:         voteData[idx],
+			Post:            post,
+			CommunityDetail: community,
+		}
+		data = append(data, postDetail)
+	}
+	return
+}
+
+func GetCommunityPostList(p *models.ParamPostList) (data []*models.ApiPostDetail, err error) {
+	ids, err := redis.GetCommunityPostIDsInOrder(p)
+	if err != nil {
+		return
+	}
+	if len(ids) == 0 {
+		zap.L().Warn("redis.GetPostIDsInorder(p) return 0 data")
+		return
+	}
+	posts, err := mysql.GetPostListByIDs(ids)
+	if err != nil {
+		return
+	}
+	// 提前查询好每篇帖子的投票数
+	voteData, err := redis.GetPostVoteData(ids)
+	if err != nil {
+		return
+	}
+
+	for idx, post := range posts {
+		// query author's data by author_id
+		user, err := mysql.GetUserByID(post.AuthorID)
+		if err != nil {
+			zap.L().Error("mysql.GetUserById(post.AuthorID) failed",
+				zap.Int64("author_id", post.AuthorID),
+				zap.Error(err))
+			continue
+		}
+		// query community's data by community_id
+		community, err := mysql.GetCommunityDetailByID(post.CommunityID)
+		if err != nil {
+			zap.L().Error("mysql.GetUserById(post.AuthorID) failed",
+				zap.Int64("community_id", post.CommunityID),
+				zap.Error(err))
+			continue
+		}
+		postDetail := &models.ApiPostDetail{
+			AuthorName:      user.Username,
+			VoteNum:         voteData[idx],
+			Post:            post,
+			CommunityDetail: community,
+		}
+		data = append(data, postDetail)
+	}
+	return
+}
+
+// GetPostListNew  将两个查询帖子列表逻辑合二为一的函数
+func GetPostListNew(p *models.ParamPostList) (data []*models.ApiPostDetail, err error) {
+	// 根据请求参数的不同，执行不同的逻辑
+	if p.CommunityID == 0 {
+		// 查所有
+		data, err = GetOrderPostList(p)
+	} else {
+		// 根据社区id查询
+		data, err = GetCommunityPostList(p)
+	}
+	if err != nil {
+		zap.L().Error("GetPostListNew failed", zap.Error(err))
+		return nil, err
 	}
 	return
 }

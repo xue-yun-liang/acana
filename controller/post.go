@@ -68,3 +68,48 @@ func GetPostListHandler(c *gin.Context) {
 	}
 	ResponseSuccess(c, data)
 }
+
+// get post list by the params which trans from frontend
+// oder by create time or vote numbers
+func GetOrderPostListHandler(c *gin.Context) {
+	// step1: get params
+	// (GET request params: /api/v1/orderedposts?page=1&s=10&order=time)
+	p := new(models.ParamPostList)
+	if err := c.ShouldBindQuery(&p); err != nil {
+		zap.L().Error("GetOrderPostListHandler get the invalid params", zap.Error(err))
+		ResponseError(c, CodeInvalidParam)
+		return
+	}
+	// step2: quert by list of id in redis
+	data, err := logic.GetPostListNew(p)
+	// step3: query the post's detail data in mysql db by list of id from redis
+
+	if err != nil {
+		zap.L().Error("logic.GetPostListNew() failed", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
+	ResponseSuccess(c, data)
+}
+
+// // get post list by community
+// func GetCommunityPostListHandler(c *gin.Context) {
+// 	// step1: get params
+// 	// (GET request params: /api/v1/orderedposts?page=1&s=10&order=time)
+// 	p := new(models.ParamPostList)
+// 	if err := c.ShouldBindQuery(&p); err != nil {
+// 		zap.L().Error("GetCommunityPostListHandler get the invalid params", zap.Error(err))
+// 		ResponseError(c, CodeInvalidParam)
+// 		return
+// 	}
+// 	// step2: quert by list of id in redis
+// 	data, err := logic.GetCommunityPostList(p)
+// 	// step3: query the post's detail data in mysql db by list of id from redis
+
+// 	if err != nil {
+// 		zap.L().Error("logic.GetOrderPostList() failed", zap.Error(err))
+// 		ResponseError(c, CodeServerBusy)
+// 		return
+// 	}
+// 	ResponseSuccess(c, data)
+// }

@@ -27,15 +27,12 @@ func SetupRouter(mode string) *gin.Engine {
 
 		v1.POST("/post", controller.CreatePostHandler)
 		v1.GET("/post/:id", controller.GetPostDetailHandler)
+		v1.GET("/posts", controller.GetPostListHandler)
+		// get the post by create time or vote numbers
+		v1.GET("/orderedposts", controller.GetOrderPostListHandler)
 
-		v1.GET("/posts/", controller.GetPostListHandler)
+		v1.POST("/vote", controller.PostVoteHandler)
 	}
-
-	// r.GET("/ping", middlewares.JWTAuthMiddleware(), func(c *gin.Context) {
-	// 	c.JSON(http.StatusOK, gin.H{
-	// 		"msg": "ok",
-	// 	})
-	// })
 
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "ok")
